@@ -1,0 +1,208 @@
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+@import '@fortawesome/fontawesome-svg-core/styles.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary-color:rgb(0, 168, 206)
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body{
+  
+  font-family: "Akshar", sans-serif;
+
+  background-image: linear-gradient(180deg, rgb(23, 255, 255,0.5) 100px, rgba(23,255,255,0.3) 200px, rgba(255,255,255,1) 300px);
+}
+html{
+  background-color: white;
+}
+
+.nav-bar-shadow{
+  -webkit-box-shadow: 0px 0px 50px -17px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 50px -17px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 50px -17px rgba(0,0,0,0.75);
+}
+.nav-bar-button{
+  border: 1px solid black;
+  border-radius: 9999px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px;
+
+}
+
+.tool-page-main-heading{
+  font-weight: bold;
+  font-size:30px;
+}
+.tool-page-h2{
+  font-weight: bold;
+  font-size:20px;
+}
+.label-head{
+  font-weight: bold;
+  font-size:15px;
+}
+
+input[type='text']{
+  border-radius: 2rem;
+  padding: 1rem;
+  border: 2px solid  rgba(0, 0, 0, 0.262);
+  text-decoration: none;
+  transition: all ease-in-out .2s;
+  box-shadow: 0px 0px 10px -4px rgba(0,0,0,0.75);
+}
+input[type='text']:focus{
+  text-decoration: none;
+  border: 2px solid rgba(0, 0, 0, 0.165);
+  outline: none;
+}
+input[type='text'].error{
+  text-decoration: none;
+  border: 2px solid rgba(255, 31, 31, 0.304);
+  outline: none;
+}
+
+.error-input-message{
+  position: absolute;
+  margin-left: 1.25rem;
+  color: rgb(239 68 68);
+  font-size: 0.875rem; /* 14px */
+line-height: 1.25rem; /* 20px */
+}
+.main-btn{
+  
+  padding: 1rem;
+  border-radius: 2rem;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px -4px rgba(0,0,0,0.75);
+  transition: ease-in-out .2s;
+}
+.main-btn:disabled{
+  cursor:progress;
+  background-color: rgb(0, 168, 206);
+}
+.main-btn:active{
+  transform: scale(0.98);
+}
+
+.medium-btn{
+  
+  padding: .5rem;
+  border-radius: 2rem;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px -4px rgba(0,0,0,0.75);
+  transition: ease-in-out .2s;
+}
+.pointer-hover
+.medium-btn:active{
+  transform: scale(0.98);
+}
+
+.btn-blue{
+  background-color: rgb(0, 208, 255);
+}
+.btn-blue:hover{
+  background-color: rgb(0, 168, 206);
+  
+}
+
+.tool-result-card{
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow:0px 0px 10px -4px rgba(0,0,0,0.75);
+}
+
+.tool-card{
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow:0px 0px 10px -4px rgba(0,0,0,0.75);
+}
+.my-shadow-sm{
+  box-shadow:0px 0px 10px -5px rgba(0,0,0,0.75);
+}
+.rounded-border-number{
+  border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 2rem;
+  margin-right: 5px;
+  text-align: center;
+  width: 2rem; 
+
+  border: 1px solid #00000052;
+  box-shadow:0px 0px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+.loader {
+  display: block;
+  --height-of-loader: 4px;
+  --loader-color: rgb(0, 168, 206);
+  width: 100%;
+  height: var(--height-of-loader);
+  border-radius: 30px;
+  background-color: rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 1s ease-in-out infinite;
+  ;
+}
+.image-reducer-selected-image{
+  
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
